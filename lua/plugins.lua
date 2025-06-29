@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
     
     -- Colorschemes
     use 'behemothbucket/gruber-darker-theme.nvim'
+    use 'Mofiqul/vscode.nvim'
    
     -- Fzf
     use { "junegunn/fzf", run = ":call fzf#install()" }
