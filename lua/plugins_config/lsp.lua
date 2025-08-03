@@ -39,12 +39,10 @@ lspconfig.ts_ls.setup{
 }
 
 lspconfig.clangd.setup{
-    cmd = {"/usr/bin/clangd"}, -- Ścieżka do pliku wykonywalnego Clangd
-    filetypes = {"c", "cpp", "objc", "objcpp"}, -- Obsługiwane typy plików
-    root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git", "compile_flags.txt", "Makefile", "CMakeLists.txt"), -- Katalog projektu
-    settings = {
-        -- Dodatkowe ustawienia Clangd
-    },   
+    cmd = {"/usr/bin/clangd"},
+    filetypes = {"c", "cpp", "objc", "objcpp"},
+    root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git", "compile_flags.txt", "Makefile", "CMakeLists.txt"),
+    settings = {},   
 };
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -64,4 +62,8 @@ lspconfig.html.setup {
         },
         provideFormatter = true
     }
+}
+
+lspconfig.phpactor.setup {
+
 }
