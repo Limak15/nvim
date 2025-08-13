@@ -10,11 +10,6 @@ return require('packer').startup(function(use)
     
     -- Colorschemes
     use 'behemothbucket/gruber-darker-theme.nvim'
-    use 'Mofiqul/vscode.nvim'
-   
-    -- Fzf
-    use { "junegunn/fzf", run = ":call fzf#install()" }
-    use 'junegunn/fzf.vim'
     
     -- Treesitter
     use { 
@@ -35,4 +30,28 @@ return require('packer').startup(function(use)
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
 
+    -- Lualine
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
+    --Telescope
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+        -- or                            , branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
+    --Lazy git
+    use({
+        "kdheepak/lazygit.nvim",
+        requires = {
+            "nvim-telescope/telescope.nvim",
+            "nvim-lua/plenary.nvim",
+        },
+        config = function()
+            require("telescope").load_extension("lazygit")
+        end,
+    })
 end)	
