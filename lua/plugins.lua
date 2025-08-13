@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'   
     
     -- Colorschemes
-    use 'behemothbucket/gruber-darker-theme.nvim'
+    use "blazkowolf/gruber-darker.nvim"
     
     -- Treesitter
     use { 

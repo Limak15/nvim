@@ -104,10 +104,10 @@ _G.packer_plugins = {
     path = "/home/kamil/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["gruber-darker-theme.nvim"] = {
+  ["gruber-darker.nvim"] = {
     loaded = true,
-    path = "/home/kamil/.local/share/nvim/site/pack/packer/start/gruber-darker-theme.nvim",
-    url = "https://github.com/behemothbucket/gruber-darker-theme.nvim"
+    path = "/home/kamil/.local/share/nvim/site/pack/packer/start/gruber-darker.nvim",
+    url = "https://github.com/blazkowolf/gruber-darker.nvim"
   },
   ["lazygit.nvim"] = {
     config = { "\27LJ\2\nL\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0'\2\3\0B\0\2\1K\0\1\0\flazygit\19load_extension\14telescope\frequire\0" },

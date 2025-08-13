@@ -1,3 +1,1 @@
-require('gruber-darker').setup()
-
-vim.cmd('colorscheme gruber-darker')
+vim.cmd.colorscheme("gruber-darker")
