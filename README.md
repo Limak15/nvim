@@ -1,5 +1,4 @@
-# Neovim configuration
+![screenshot](images/limvim.png)
+![screenshot](images/screenshot.png)
 
-This is my neovim configuration
 
-![screenshot](screenshot.png)
