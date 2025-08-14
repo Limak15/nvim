@@ -64,6 +64,4 @@ lspconfig.html.setup {
     }
 }
 
-lspconfig.phpactor.setup {
-
-}
+lspconfig.phpactor.setup {}
