@@ -1,6 +1,6 @@
+require('plugins')
 require('settings')
 require('keybinds')
-require('plugins')
 require('plugins_config.luasnip')
 require('plugins_config.lualine')
 require('plugins_config.cmp')

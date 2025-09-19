@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 echo -e "██╗     ██╗███╗   ███╗██╗   ██╗██╗███╗   ███╗"
 echo -e "██║     ██║████╗ ████║██║   ██║██║████╗ ████║"
 echo -e "██║     ██║██╔████╔██║██║   ██║██║██╔████╔██║"
@@ -63,8 +62,8 @@ function spinner() {
 
 VERSION="v1.0.0"
 DEFAULT_CONFIG_PATH="$HOME/.config/nvim"
-FONT_NAME="Fira Code"
-FONT_URI="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.zip"
+FONT_NAME="CaskaydiaCove"
+FONT_URI="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip"
 
 msg "$VERSION                       Created by Limak"
 
@@ -104,7 +103,7 @@ if fc-list | grep -q "$FONT_NAME"; then
 else
     tmp=$(mktemp -d)
 
-    wget "$FONT_URI" -O "$tmp/FiraCode.zip" > /dev/null 2> log.txt &
+    wget "$FONT_URI" -O "$tmp/NvimFont.zip" > /dev/null 2> log.txt &
     wget_pid=$!
 
     spinner "$wget_pid" "Downloading $FONT_NAME font"
@@ -135,6 +134,7 @@ else
 fi
 
 [ ! -v config_path ] && config_path="$DEFAULT_CONFIG_PATH"
+[ ! -d config_path ] && mkdir $config_path
 
 ln -s "$(pwd)"/src/* "$config_path" > /dev/null 2> log.txt &
 
