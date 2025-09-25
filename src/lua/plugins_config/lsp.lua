@@ -32,27 +32,26 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
-local lspconfig = require('lspconfig');
+vim.lsp.enable('ts_ls')
+vim.lsp.enable('clangd')
+vim.lsp.enable('cssls')
+vim.lsp.enable('html')
+vim.lsp.enable('phpactor')
 
-lspconfig.ts_ls.setup{
-    on_attach = on_attach,
-}
+vim.lsp.config('ts_ls', {
+    cmd = { "/usr/bin/typescript-language-server", "--stdio" },
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    init_options = { hostInfo = "neovim" },
+})
 
-lspconfig.clangd.setup{
+vim.lsp.config('clangd', {
     cmd = {"/usr/bin/clangd"},
     filetypes = {"c", "cpp", "objc", "objcpp"},
-    root_dir = lspconfig.util.root_pattern("compile_commands.json", ".git", "compile_flags.txt", "Makefile", "CMakeLists.txt"),
+    root_markers = { ".clangd", ".clang-tidy", ".clang-format", "compile_commands.json", "compile_flags.txt", "configure.ac", ".git" },
     settings = {},   
-};
+})
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-lspconfig.cssls.setup{
-    capabilities = capabilities,
-}
-
-lspconfig.html.setup {
+vim.lsp.config('html', {
     capabilities = capabilities,
     init_options = {
         configurationSection = { "html", "css", "javascript" },
@@ -62,6 +61,4 @@ lspconfig.html.setup {
         },
         provideFormatter = true
     }
-}
-
-lspconfig.phpactor.setup {}
+})
