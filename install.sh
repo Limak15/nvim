@@ -89,7 +89,7 @@ if [ "$#" -eq 1 ]; then
     fi
 fi
 
-dependencies=("neovim" "wget" "git" "lazygit")
+dependencies=("neovim" "wget" "git" "lazygit" "clang" "nodejs" "npm")
 
 sudo pacman -Sy --noconfirm --needed "${dependencies[@]}" > /dev/null 2> log.txt &
 pacman_pid=$!

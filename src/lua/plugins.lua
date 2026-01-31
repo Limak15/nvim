@@ -9,11 +9,13 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'   
     
     -- Colorschemes
-    use "folke/tokyonight.nvim"
+    --use "blazkowolf/gruber-darker.nvim"
+    use 'behemothbucket/gruber-darker-theme.nvim'
     
     -- Treesitter
     use { 
         "nvim-treesitter/nvim-treesitter",
+        lazy = false,
         run = ":TSUpdate",
     }
     -- Completion stuff
