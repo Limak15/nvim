@@ -60,7 +60,7 @@ function spinner() {
     return $exit_status
 }
 
-VERSION="v1.0.0"
+VERSION="v1.0.1"
 DEFAULT_CONFIG_PATH="$HOME/.config/nvim"
 FONT_NAME="CaskaydiaCove"
 FONT_URI="https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/CascadiaCode.zip"
