@@ -12,12 +12,6 @@ return require('packer').startup(function(use)
     --use "blazkowolf/gruber-darker.nvim"
     use 'behemothbucket/gruber-darker-theme.nvim'
     
-    -- Treesitter
-    use { 
-        "nvim-treesitter/nvim-treesitter",
-        lazy = false,
-        run = ":TSUpdate",
-    }
     -- Completion stuff
     use 'hrsh7th/nvim-cmp'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -27,16 +21,6 @@ return require('packer').startup(function(use)
     
     -- Lsp stuff 
     use 'neovim/nvim-lspconfig'
-
-    -- Snippet engine
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
-
-    -- Lualine
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
 
     --Telescope
     use {
