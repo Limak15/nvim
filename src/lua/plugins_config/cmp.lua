@@ -30,11 +30,7 @@ local kind_icons = {
 }
 
 cmp.setup({
-    snippet = {
-      expand = function(args)
-        require('luasnip').lsp_expand(args.body)
-      end,
-    },
+    snippet = {},
     window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
@@ -57,7 +53,6 @@ cmp.setup({
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'luasnip' }, -- For luasnip users.
     }, {
       { name = 'buffer' },
     })
@@ -93,18 +88,3 @@ cmp.setup.cmdline(':', {
 
   -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
--- Custom colors
-vim.cmd([[
-    highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
-    highlight! CmpItemAbbrMatch guibg=NONE guifg=#5294E2
-    highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#5294E2
-    highlight! CmpItemKindVariable guibg=NONE guifg=#a29bfe
-    highlight! CmpItemKindInterface guibg=NONE guifg=#a29bfe
-    highlight! CmpItemKindText guibg=NONE guifg=#a29bfe
-    highlight! CmpItemKindFunction guibg=NONE guifg=#5294E2
-    highlight! CmpItemKindMethod guibg=NONE guifg=#5294E2
-    highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
-    highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
-    highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
-]])

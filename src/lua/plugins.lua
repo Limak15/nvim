@@ -1,43 +1,17 @@
-vim.cmd([[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
-  augroup end
-]])
+vim.pack.add({
+    { src = "https://github.com/folke/tokyonight.nvim" },
 
-return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'   
-    
-    -- Colorschemes
-    --use "blazkowolf/gruber-darker.nvim"
-    use 'behemothbucket/gruber-darker-theme.nvim'
-    
-    -- Completion stuff
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/cmp-cmdline'
-    
-    -- Lsp stuff 
-    use 'neovim/nvim-lspconfig'
+    -- Completion
+    { src = "https://github.com/hrsh7th/nvim-cmp" },
+    { src = "https://github.com/hrsh7th/cmp-nvim-lsp" },
+    { src = "https://github.com/hrsh7th/cmp-buffer" },
+    { src = "https://github.com/hrsh7th/cmp-path" },
+    { src = "https://github.com/hrsh7th/cmp-cmdline" },
 
-    --Telescope
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.8',
-        -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
+    -- LSP
+    { src = "https://github.com/neovim/nvim-lspconfig" },
 
-    --Lazy git
-    use({
-        "kdheepak/lazygit.nvim",
-        requires = {
-            "nvim-telescope/telescope.nvim",
-            "nvim-lua/plenary.nvim",
-        },
-        config = function()
-            require("telescope").load_extension("lazygit")
-        end,
-    })
-end)	
+    -- Telescope + dependency
+    { src = "https://github.com/nvim-lua/plenary.nvim" },
+    { src = "https://github.com/nvim-telescope/telescope.nvim" },
+})

@@ -3,4 +3,6 @@ require('settings')
 require('keybinds')
 require('plugins_config.cmp')
 require('plugins_config.lsp')
-require('colorschemes.gruber')
+
+-- use colorscheme
+vim.cmd[[colorscheme tokyonight]]
